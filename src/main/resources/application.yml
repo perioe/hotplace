@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: local
+
+spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS: false
+
+---
+spring:
+  profiles: local
+  jpa:
+    show-sql: true
+    properties.hibernate.format-sql: true
+    hibernate:
+      ddl-auto: update
+
+database:
+  datasource-write:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://dev-db-common-write.withinapi.com:3306/Product?useCursors=false&sendStringParametersAsUnicode=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&autoReconnect=true&autoReconnectForPools=true
+    username: Product_service
+    password: lU3DUHDjAnXj
+  datasource-read:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://dev-db-common-read.withinapi.com:3306/Product?useCursors=false&sendStringParametersAsUnicode=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&autoReconnect=true&autoReconnectForPools=true
+    username: Product_service
+    password: lU3DUHDjAnXj
+
+---
+spring:
+  profiles: dev
+  jpa:
+    show-sql: true
+    properties.hibernate.format-sql: true
+    hibernate:
+      ddl-auto: update
+
+database:
+  datasource-write:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://dev-db-common-write.withinapi.com:3306/Product?useCursors=false&sendStringParametersAsUnicode=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&autoReconnect=true&autoReconnectForPools=true
+    username: Product_service
+    password: lU3DUHDjAnXj
+  datasource-read:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://dev-db-common-read.withinapi.com:3306/Product?useCursors=false&sendStringParametersAsUnicode=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&autoReconnect=true&autoReconnectForPools=true
+    username: Product_service
+    password: lU3DUHDjAnXj
